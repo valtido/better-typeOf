@@ -5,11 +5,11 @@ class Animal
 Person = ->
     return "Tom"
 
-### class type START ###
-class type 
+### class typeOf START ###
+class typeOf
   constructor: (@value) ->
     if @value == null then return "[object Null]"
-    if @value == undefined or typeof @value == "undefined" then return "[object Undefined]"
+    if @value == undefined or typeOf @value == "undefined" then return "[object Undefined]"
     getClass =  toClass(@value)
     if getClass == "[object annonymous]" then return @value
     return getClass
@@ -30,7 +30,7 @@ class type
       else str
   )
 
-### class type END ###
+### class typeOf END ###
   
 list = [
   ""
@@ -50,8 +50,8 @@ list = [
   {}
   new Object()
   ->
-  type("")
-  new type()
+  typeOf("")
+  new typeOf()
   new Date()
   new Animal("Ben")
   new Animal()
@@ -65,7 +65,7 @@ list = [
 
 ####
 for item in list
-  console.log(type(item) , "\t\t\t :: \t\t\t", item )
+  console.log(typeOf(item) , "\t\t\t :: \t\t\t", item )
 ###
 
-console.log type Animal()
+console.log typeOf Animal()
