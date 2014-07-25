@@ -9,26 +9,26 @@ Person = ->
 class typeOf
   constructor: (@value) ->
     if @value == null then return "[object Null]"
-    if @value == undefined or typeOf @value == "undefined" then return "[object Undefined]"
+    if @value == undefined or typeof @value == "undefined" then return "[object Undefined]"
     getClass =  toClass(@value)
     if getClass == "[object annonymous]" then return @value
     return getClass
     
-  toClass = (@value)-> (
-    str = {}.toString.call(@value)
+toClass = (@value)-> (
+  str = {}.toString.call(@value)
+  
+  switch str
+    when "[object Function]" then return ( (obj)-> 
+        name = obj.name || "Annonymous"
+        return "[object #{name}]"
+      )(@value)
+    when "[object Object]" then return ( (obj)->
+        name = obj.constructor.name || "Annonymous"
+        "[class #{name}]"
+      )(@value)
     
-    switch str
-      when "[object Function]" then return ( (obj)-> 
-          name = obj.name || "Annonymous"
-          return "[object #{name}]"
-        )(@value)
-      when "[object Object]" then return ( (obj)->
-          name = obj.constructor.name || "Annonymous"
-          "[class #{name}]"
-        )(@value)
-      
-      else str
-  )
+    else str
+)
 
 ### class typeOf END ###
   
