@@ -5,7 +5,7 @@ JavaScript function which defines proper types in JavaScript variable or object
 
 #How it works?
 
-We will look for proper Object names otherwise a Class name (I know a taboo name) but we .
+We will look for proper Object names otherwise a Class name (I know a taboo name).
 
 if a name is not present, we assume it's an Annonymous function
 
