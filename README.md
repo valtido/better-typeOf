@@ -33,7 +33,7 @@ This is an innitial draft, and would be open to improvements if I have forgotten
     typeOf myValue; #output "object String"
 ```
 
-#The test list
+#The javascript test list/array
 
 ```
 list = [
@@ -69,33 +69,35 @@ list = [
 ```
 ##Which outputs
 ```
-[object String]		: ""
-[object String]		: String
-[object Number]		: NaN
-[object Number]		: 0
-[object Number]		: Infinity
-[object Number]		: -1
-[object Number]		: Number
-[object String]		: "2"
-[object Boolean]	: true
-[object Null]		: null
-[object Undefined]	: undefined
-[object Array]		: Array[0]
-[object Array]		: Array[0]
-[object Array]		: Array[0]
-[class Object]		: Object
-[class Object]		: Object
-[object Annonymous]	: function () {}
-[object String]		: "[object String]"
-[class typeOf]		: typeOf
-[object Date]		: Fri Jul 25 2014 16:41:39 GMT+0100 (GMT Daylight Time)
-[class Animal]		: Animal
-[class Animal]		: Animal
-[object String]		: "undefined"
-[object String]		: "ben"
-[object Animal]		: function Animal(name) { this.name = name;    return this.name; }
-[class Annonymous]	: Person
-[object String]		: "Tom"
-[object Annonymous]	: function () { return "Tom"; } 
+//returned value            //input                       //input details (as seen in chrome debug tool)
+==============================================================================================================
+[object String]    :        ""                          : ""
+[object String]    :        new String("")              : String
+[object Number]    :        NaN                         : NaN
+[object Number]    :        0                           : 0
+[object Number]    :        Infinity                    : Infinity
+[object Number]    :        -1                          : -1
+[object Number]    :        new Number("2")             : Number
+[object String]    :        "2"                         : "2"
+[object Boolean]   :        true                        : true
+[object Null]      :        null                        : null
+[object Undefined] :        undefined                   : undefined
+[object Array]     :        []                          : Array[0]
+[object Array]     :        new Array                   : Array[0]
+[object Array]     :        Array()                     : Array[0]
+[class Object]     :        {}                          : Object
+[class Object]     :        new Object()                : Object
+[object Annonymous]:        ->                          : function () {}
+[object String]    :        typeOf("")                  : "[object String]"
+[class typeOf]     :        new typeOf()                : typeOf
+[object Date]      :        new Date()                  : Fri Jul 25 2014 16:41:39 GMT+0100 (GMT Daylight Time)
+[class Animal]     :        new Animal("Ben")           : Animal
+[class Animal]     :        new Animal()                : Animal
+[object String]    :        Animal()                    : "undefined"
+[object String]    :        Animal("ben")               : "ben"
+[object Animal]    :        Animal                      : function Animal(name) { this.name = name;    return this.name; }
+[class Annonymous] :        new Person()                : Person
+[object String]    :        Person()                    : "Tom"
+[object Annonymous]:        Person                      : function () { return "Tom"; } 
 ```
 
