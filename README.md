@@ -10,9 +10,11 @@ We will look for proper Object names otherwise a Class name (I know a taboo name
 if a name is not present, we assume it's an Annonymous function
 
 There `typeOf` outputs two messages in the format of `[type Name]`:
+```
 - type // object || class
 - name // name || Annonymous    
- 
+```
+
 Note: that name is the function//constructor name, or Annonymous, 
 Note: name is always capital (first letter), or left as defined by the function, otherwise unexpected letter casing could go wrong.
 
