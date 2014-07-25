@@ -26,11 +26,11 @@ This is an innitial draft, and would be open to improvements if I have forgotten
 ```
     //in javascript
     var value = "test me"
-    type(myValue); //output: "object String"
+    typeOf(myValue); //output: "object String"
     
     //in coffee script
     value = "test me"
-    type myValue; #output "object String"
+    typeOf myValue; #output "object String"
 ```
 
 #The test list
